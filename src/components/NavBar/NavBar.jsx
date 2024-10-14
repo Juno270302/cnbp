@@ -22,17 +22,17 @@ const NavBar = () => {
   };
 
   return (
-    <div className="w-full ">
-      <div className="py-10 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[10rem] max-md:py-5 border">
+    <div className="w-full sticky top-0 bg-white">
+      <div className=" py-10 px-[10rem] max-sm:px-[3rem] max-md:px-[3rem] max-lg:px-[3rem] max-xl:px-[5rem] max-2xl:px-[7rem] max-xl:py-4 max-2xl:py-5 ">
         <div className="w-full flex max-md:hidden">
           <div className="w-[10%] flex items-center justify-center ">
             <img
               src={logo}
               alt="logo"
-              className="w-[115px] max-sm:w-[36px] max-md:w-[60px] max-lg:w-[80px] max-xl:w-[100px] max-2xl:w-[115px]"
+              className="w-[115px] max-sm:w-[36px] max-md:w-[40px] max-lg:w-[50px] max-xl:w-[60px] max-2xl:w-[60px]"
             />
           </div>
-          <div className=" w-[90%] flex items-center justify-center space-x-16 text-[20px] font-mainB max-md:text-[14px] max-lg:text-[16px] max-xl:text-[18px] max-2xl:text-[20px] max-md:space-x-5 max-lg:space-x-5 max-xl:space-x-12 max-2xl:space-x-14">
+          <div className=" w-[90%] flex items-center justify-center space-x-16 text-[20px] font-mainB max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px] max-md:space-x-5 max-lg:space-x-5 max-xl:space-x-8 max-2xl:space-x-14">
             <button
               className={`hover:text-[#639F7A] ${
                 isCurrentPath("/home") ? "border-b-[2.5px] border-black" : ""
@@ -59,13 +59,13 @@ const NavBar = () => {
               <AnimatePresence>
                 {showProducts && (
                   <motion.div
-                    className="absolute w-[200px] bg-white shadow-md rounded-md p-4 z-50 pl-10"
+                    className="absolute w-[200px] bg-white shadow-md rounded-md p-4 z-50 pl-10 max-lg:pl-4 max-xl:pl-6 max-lg:w-[100px] max-xl:w-[140px] max-2xl:w-[160px] "
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="flex flex-col font-mainR text-[#E1E1E1] text-[18px] space-y-3">
+                    <div className="flex flex-col font-mainR text-[#E1E1E1] text-[18px] space-y-3 max-md:text-[12px] max-lg:text-[12px] max-xl:text-[14px] max-2xl:text-[16px]">
                       <button className=" text-left hover:text-black">
                         <Link to={`/${currentLanguage}/product/1`}>
                           Sản phẩm 1
@@ -113,6 +113,7 @@ const NavBar = () => {
             </button>
           </div>
         </div>
+        
         <div className="hidden max-md:block relative w-full">
           <div className="absolute top-1.5 -left-6  max">
             <img src={icon_menu} alt="icon_menu" />

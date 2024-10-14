@@ -9,7 +9,7 @@ const Test = () => {
   });
   return (
     <div>
-      <LanguageSelector />
+      {/* <LanguageSelector />
       <h1>{t("greeting")}</h1>
       <Trans
         i18nKey={line1}
@@ -18,7 +18,8 @@ const Test = () => {
         }}
         components={{ 1: <b /> }}
       />
-      <p>{line2}</p>
+      <p>{line2}</p> */}
+      Hello World
     </div>
   );
 };

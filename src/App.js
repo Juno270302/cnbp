@@ -20,31 +20,48 @@ import Our from "./page/Our";
 import Product from "./page/Product";
 import Library from "./page/Library";
 import Recruitment from "./page/Recruitment";
+import Footer from "./components/Footer/Footer";
+import CertificateQuality from "./page/CertificateQuality";
+import Introduction from "./page/Introduction";
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
+    <>
+      <Router>
         <Header />
         <NavBar />
-        <Routes>
-          <Route path="/:lang/home" element={<Home />} />
-          <Route path="/:lang/our" element={<Our />} />
-          <Route path="/:lang/product" element={<Product />} />
-          <Route path="/:lang/library" element={<Library />} />
-          <Route path="/:lang/recruitment" element={<Recruitment />} />
-          <Route path="/:lang/contact" element={<Contact />} />
+        <div className="h-screen">
+          <Routes>
+            <Route path="/:lang/home" element={<Home />} />
+            <Route path="/:lang/our" element={<Our />}>
+              {/* Nested routes for "Our" */}
+              <Route path="introduction" element={<Introduction />} />
+              <Route
+                path="certificate-quality"
+                element={<CertificateQuality />}
+              />
+            </Route>
+            <Route path="/:lang/product" element={<Product />} />
+            <Route path="/:lang/library" element={<Library />} />
+            <Route path="/:lang/recruitment" element={<Recruitment />} />
+            <Route path="/:lang/contact" element={<Contact />} />
 
-
-          {/* <Route path="/:lang/login" element={<Login />} />
+            {/* <Route path="/:lang/login" element={<Login />} />
           <Route path="/:lang/register" element={<Register />} />
           <Route path="/:lang/blog" element={<Blog />} />
           <Route path="/:lang/blogList" element={<BlogList />} />
           <Route path="/:lang/test" element={<Test />} /> */}
-        </Routes>
+          </Routes>
+        </div>
+        <Footer />
         <ToastContainer />
-      </div>
-    </Router>
+      </Router>
+      <Router>
+        <Routes>
+          <Route path="/helloworld" element={<Test />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 
