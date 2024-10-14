@@ -1,0 +1,11 @@
+{
+  "Menu": {
+    "Home": "HOME",
+    "Our": "OUR",
+    "Product": "PRODUCT",
+    "Library": "LIBRARY",
+    "News": "NEWS",
+    "Recruitment" : "RECRUITMENT",
+    "Contact" : "CONTACT"
+  }
+}
